@@ -8,7 +8,7 @@ const router = express.Router()
 router.get('/', async (req,res)=>{
     if (req.query.id)
     {
-        var pregled = await PregledService.getById(req.query.id)
+        var pregled = await PregledService.findById(req.query.id)
         console.log(pregled)
         if (pregled)
         {
@@ -42,7 +42,20 @@ async (req, res)=>{
 
 router.post('', (req,res)=>{
     var pregled = PregledService.savePregled(req.body)
-    res.send({success:pregled})
+    res.sendStatus({success:pregled})
+})
+
+
+router.delete("/", 
+    //passport.authenticate('jwt', {session: false}),
+    //passport.authorizeRoles('ADMIN'),
+async (req,res)=>
+{
+    var success = await PregledService.deletePregled(req.body.id)
+    if(success)
+        res.sendStatus(200)
+    else 
+        res.sendStatus(404)
 })
 
 module.exports = router

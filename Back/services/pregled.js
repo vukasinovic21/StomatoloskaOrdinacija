@@ -6,10 +6,10 @@ var getAll = function()
     return PregledModel.find()
 }
 
-var getById = function(id)
+var findById = function(id)
 {
     if (ObjectId.isValid(id))
-        return PregledModel.findById(id).populate('stomatolog')
+        return PregledModel.findById(id)
     else
         return undefined;
 }
@@ -35,9 +35,18 @@ var getByStomatolog = function(id)
     else
         return undefined;
 }
+
+var deletePregled = async function(id)
+{
+    var pregled = await findById(id)
+    if(pregled)
+        return PregledModel.deletePregled(id)
+}
+
 module.exports = {
     savePregled,
     getAll,
-    getById,
-    getByStomatolog
+    findById,
+    getByStomatolog,
+    deletePregled
 }

@@ -26,4 +26,11 @@ PregledModel.savePregled = async function(pregled)
         return false;
 }
 
+PregledModel.deletePregled = async function(id)
+{
+    var status = await PregledModel.findByIdAndDelete(id)
+    
+    return status
+}
+
 module.exports = PregledModel
