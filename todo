@@ -1,0 +1,21 @@
+1. POCETNA STRANICA
+-prikaz svih relevantnih informacija o stomatoloskoj ordinaciji - FRONT 
+-pregled stomatologa sa slikama, imenima i dodatnim informacijama
+-klikom na stomatologa, prikaz detalja o radnom stazu, broju pacijenata i prosecnoj oceni zadovoljstva pacijenata...
+
+2. ZAKAZIVANJE PREGLEDA
+-opcija zakazi pregled sa izborom stomatologa
+-kalendar sa prikazom raspolozivih termina za odabranog stomatologa
+-unos osnovnih podataka (ime, prezime, e-mail) prilikom zakazivanja pregleda
+-nije neophodno logovanje da bi se pregled zakazao
+
+3. ADMINISTRATORSKI PANEL
++logovanje administratora sa korisnickim imenom i lozinkom
+-mogucnost za odobravanjem, brisanjem ili pregledom zakazanih pregleda
+-pregled broja zakazanih pregleda po svakom stomatologu
+-slanje mejlova korisnicima o uspesnom zakazivanju i stomatolozima o novom pregledu
+
+4. STOMATOLOG KORISNICKI PANEL
++logovanje stomatologa sa korisnickim imenom i lozinkom 
+-pregled zakazanih pregleda sa imenom, prezimenom pacijenata i vremenom pregleda
+-treba da postoji i mogucnost prikaza istorije prethodnih pregleda za svakog pacijenta sa detaljima i dodavanje novih detalja nakon pregleda
