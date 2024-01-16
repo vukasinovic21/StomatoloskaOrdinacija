@@ -1,11 +1,11 @@
 {
   "name": "back",
   "version": "1.0.0",
-  "description": "",
+  "description": "Web2 projekat - Stomatoloska Ordinacija",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Nikola Vukasinovic",
   "license": "ISC"
 }
