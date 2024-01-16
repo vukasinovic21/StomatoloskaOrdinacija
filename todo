@@ -16,6 +16,7 @@
 - 4 slanje mejlova korisnicima o uspesnom zakazivanju i stomatolozima o novom pregledu
 
 4. STOMATOLOG KORISNICKI PANEL
-+ 1 logovanje stomatologa sa korisnickim imenom i lozinkom 
-+ 2 pregled zakazanih pregleda sa imenom,prezimenom pacijenata i vremenom pregleda
-- 3 treba da postoji i mogucnost prikaza istorije prethodnih pregleda za svakog pacijenta sa detaljima i dodavanje novih detalja nakon pregleda
++ 1 registrovanje stomatologa sa imenom prezimenom, mejlom, korisnickim imenom
++ 2 logovanje stomatologa sa korisnickim imenom i lozinkom 
++ 3 pregled zakazanih pregleda sa imenom,prezimenom pacijenata i vremenom pregleda
+- 4 treba da postoji i mogucnost prikaza istorije prethodnih pregleda za svakog pacijenta sa detaljima i dodavanje novih detalja nakon pregleda
