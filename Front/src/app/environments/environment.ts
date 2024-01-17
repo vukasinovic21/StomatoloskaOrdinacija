@@ -1,4 +1,4 @@
 export const environment: any = 
 {
-    backUrl: 'http://localhost:3000'
+    backUrl: 'http://localhost:3000/'
 }
