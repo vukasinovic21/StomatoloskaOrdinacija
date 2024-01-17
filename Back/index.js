@@ -1,7 +1,7 @@
 const express = require("express")
 const config = require("./config/config")
 const app = express()
-const cors = require('cors') //morace da se napravi zbog angulara
+//const cors = require('cors') //morace da se napravi zbog angulara
 
 const mongoose = require("mongoose")
 mongoose.connect(config.dbConnection)
@@ -11,7 +11,7 @@ const stomRoutes = require("./routes/stomatolog")
 const pregledRoutes = require("./routes/pregled")
 
 app.use(express.json())
-app.use(cors())
+//app.use(cors())
 app.use("/auth", authRoutes)
 app.use("/stom", stomRoutes)
 app.use("/pregled", pregledRoutes)
