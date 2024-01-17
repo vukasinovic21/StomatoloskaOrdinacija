@@ -25,7 +25,7 @@ export class RegisterComponent {
     this.authService.register(this.email, this.username, this.name, this.lastname, this.password).subscribe( token =>
       {
         this.cookie.set("token", token.token)
-        this.router.navigate(['pocetna'])
+        this.router.navigate(['home'])
       })
   }
 
