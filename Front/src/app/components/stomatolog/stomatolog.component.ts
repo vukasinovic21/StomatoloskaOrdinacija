@@ -19,6 +19,8 @@ export class StomatologComponent
   dentist!: Stomatolog;
   id!: string;
   pregledi?: Pregled[] = []
+  godina!: number
+  mesec!: number
 
   ngOnInit(): void
   {
@@ -33,6 +35,7 @@ export class StomatologComponent
     this.dentistService.getDentistById(this.id).subscribe({next: (res) => {
       //console.log("DENTIST: "+this.id);
       this.dentist = res;
+      this.staz();
     }, error: (error) => {
       console.log("Greska prilikom getDentist()");
     }})
@@ -59,5 +62,20 @@ export class StomatologComponent
   home()
   {
     this.router.navigate(['home']);
+  }
+
+  zakaziPregled(id:any)
+  {
+    this.router.navigate(['pregled/'+id]);
+  }
+
+  staz()
+  {
+    let currentDate = new Date();
+    let datum = new Date(this.dentist.datumZaposlenja);
+    //console.log(currentDate);
+    //console.log(this.dentist.datumZaposlenja);
+    this.godina = Math.round(Math.floor((Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate()) - Date.UTC(datum.getFullYear(), datum.getMonth(), datum.getDate()) ) /(1000 * 60 * 60 * 24))/365*10)/10;
+    this.mesec = Math.round(Math.floor((Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate()) - Date.UTC(datum.getFullYear(), datum.getMonth(), datum.getDate()) ) /(1000 * 60 * 60 * 24))/30.417*10)/10;
   }
 }

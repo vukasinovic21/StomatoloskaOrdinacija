@@ -42,7 +42,7 @@ async (req, res)=>{
 
 router.post('', (req,res)=>{
     var pregled = PregledService.savePregled(req.body)
-    res.sendStatus({success:pregled})
+    res.sendStatus(200)
 })
 
 

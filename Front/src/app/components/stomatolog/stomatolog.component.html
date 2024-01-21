@@ -3,10 +3,12 @@
     Email: {{this.dentist.email}}<br>
     Name: {{this.dentist.name}}<br>
     Lastname: {{this.dentist.lastname}}<br>
-    Datum zaposlenja: {{this.dentist.datumZaposlenja}}
+    Datum zaposlenja: {{this.dentist.datumZaposlenja}}<br>
+    <span *ngIf="this.godina>=1">Godina staza: {{this.godina}}<br></span>
+    <span *ngIf="this.godina<1">Meseci staza: {{this.mesec}}<br></span>
 </div>
 <div>
-    <h3>Trenutan broj zakazanih pregleda: {{ pregledi?.length }}</h3>
+    <h3>Trenutan broj zakazanih pregleda: {{ pregledi?.length }} <button (click)="zakaziPregled(this.dentist._id)">Zakazi pregled</button></h3>
     <div *ngFor="let pregled of pregledi">
         Name: {{ pregled.name }}
         <br>Lastname: {{ pregled.lastname }}

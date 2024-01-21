@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { StomatologComponent } from './components/stomatolog/stomatolog.component';
+import { PregledComponent } from './components/pregled/pregled.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { StomatologComponent } from './components/stomatolog/stomatolog.componen
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    StomatologComponent
+    StomatologComponent,
+    PregledComponent
   ],
   imports: [
     BrowserModule,

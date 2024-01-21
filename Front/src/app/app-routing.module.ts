@@ -5,6 +5,7 @@ import { NoLoggedGuard } from './guards/no-logged.guard';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { StomatologComponent } from './components/stomatolog/stomatolog.component';
+import { PregledComponent } from './components/pregled/pregled.component';
 
 const routes: Routes = 
 [
@@ -30,6 +31,11 @@ const routes: Routes =
   {
     path:"stomatolog/:id",
     component:StomatologComponent,
+    //canActivate:[NoLoggedGuard],
+  },
+  {
+    path:"pregled/:id",
+    component:PregledComponent,
     //canActivate:[NoLoggedGuard],
   },
 ];
