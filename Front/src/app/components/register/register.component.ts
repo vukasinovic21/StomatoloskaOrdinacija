@@ -29,4 +29,13 @@ export class RegisterComponent {
       })
   }
 
+  home()
+  {
+    this.router.navigate(['home'])
+  }
+
+  forgotPassword()
+  {
+    this.router.navigate(['register'])//forgotPassword;
+  }
 }

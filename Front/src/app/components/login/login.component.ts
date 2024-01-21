@@ -25,4 +25,13 @@ export class LoginComponent {
       })
   }
 
+  home()
+  {
+    this.router.navigate(['home'])
+  }
+
+  forgotPassword()
+  {
+    this.router.navigate(['login'])//forgotPassword;
+  }
 }

@@ -2,8 +2,9 @@
 +- 1 prikaz svih relevantnih informacija o stomatoloskoj ordinaciji - FRONT 
 + 2 pregled stomatologa sa slikama, imenima i dodatnim informacijama + -slike
 - 3 klikom na stomatologa, prikaz detalja o radnom stazu, broju pacijenata i prosecnoj oceni zadovoljstva pacijenata...
+
 -ubaciti za stomatologa kada se zaposlio pa na osnovu danasnjeg dana racunati staz
--napraviti na beku da se vraca broj pregleda jednog stomatologa umesto broja pacijenata
++napraviti na beku da se vraca broj pregleda jednog stomatologa umesto broja pacijenata
 
 2. ZAKAZIVANJE PREGLEDA
 + 1 opcija zakazi pregled sa izborom stomatologa 
@@ -14,11 +15,15 @@
 3. ADMINISTRATORSKI PANEL
 + 1 logovanje administratora sa korisnickim imenom i lozinkom
 + 2 ?mogucnost za odobravanjem?, brisanjem ili pregledom zakazanih pregleda
-- 3 pregled broja zakazanih pregleda po svakom stomatologu
++ 3 pregled broja zakazanih pregleda po svakom stomatologu
 - 4 slanje mejlova korisnicima o uspesnom zakazivanju i stomatolozima o novom pregledu
 
 4. STOMATOLOG KORISNICKI PANEL
-+ 1 registrovanje stomatologa sa imenom prezimenom, mejlom, korisnickim imenom
-+ 2 logovanje stomatologa sa korisnickim imenom i lozinkom 
++ 1 registrovanje stomatologa sa imenom prezimenom, mejlom, korisnickim imenom +
++ 2 logovanje stomatologa sa korisnickim imenom i lozinkom +
 + 3 pregled zakazanih pregleda sa imenom,prezimenom pacijenata i vremenom pregleda
 - 4 treba da postoji i mogucnost prikaza istorije prethodnih pregleda za svakog pacijenta sa detaljima i dodavanje novih detalja nakon pregleda
+-napraviti forgot password ako korisnik unese sve potrebne informacije, moze da promeni lozinku
+
+mogu da se registruju samo stomatolozi za sad a korisnici mogu da popune upitnik kada zele da zakazu pregled... do daljnjeg
+za kasnije ubaciti i users tabelu u bazu i onda omoguciti 2 vrste prijavljivanja itd..

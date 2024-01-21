@@ -20,6 +20,7 @@ export class HomeComponent {
   ngOnInit(): void 
   {
     this.getDentists();
+    this.funkc();
   }
 
   getDentists()
