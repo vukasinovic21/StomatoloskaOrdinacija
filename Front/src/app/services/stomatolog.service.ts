@@ -16,6 +16,11 @@ export class StomatologService {
 
   getAllDentists() : Observable<Stomatolog[]>
   {
-    return this.httpClient.get<Stomatolog[]>(this.backUrl + "stom/")
+    return this.httpClient.get<Stomatolog[]>(this.backUrl + "stom/");
+  }
+
+  getDentistById(id:string): Observable<Stomatolog>
+  {
+    return this.httpClient.get<Stomatolog>(this.backUrl + "stom/"+ id);
   }
 }
