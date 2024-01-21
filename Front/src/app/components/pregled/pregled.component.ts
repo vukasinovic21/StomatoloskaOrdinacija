@@ -28,12 +28,12 @@ export class PregledComponent {
   {
     this.pregledService.zakazi(this.name, this.lastname, this.email, this.datum, this.stomatolog).subscribe( token =>
     {
-      this.router.navigate(['stomatolog/65a6c92ee3c63fc4d447abad']);
-    });this.router.navigate(['stomatolog/65a6c92ee3c63fc4d447abad']);
+      this.router.navigate(['stomatolog/'+this.stomatolog]);
+    });this.router.navigate(['stomatolog/'+this.stomatolog]);
   }
 
-  home()
+  back()
   {
-    this.router.navigate(['home']);
+    this.router.navigate(['stomatolog/'+this.stomatolog]);
   }
 }

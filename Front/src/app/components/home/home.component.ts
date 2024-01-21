@@ -48,6 +48,7 @@ export class HomeComponent {
     if(this.cookie.check("token"))
     {
       this.cookie.delete("token");
+      this.logged = false;
       this.router.navigate(['login'])
     }
   }
