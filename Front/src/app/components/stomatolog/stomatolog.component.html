@@ -5,7 +5,7 @@
     Lastname: {{this.dentist.lastname}}<br>
 </div>
 <div>
-    <h3>Zakazani pregledi:</h3>
+    <h3>Trenutan broj zakazanih pregleda: {{ pregledi?.length }}</h3>
     <div *ngFor="let pregled of pregledi">
         Name: {{ pregled.name }}
         <br>Lastname: {{ pregled.lastname }}

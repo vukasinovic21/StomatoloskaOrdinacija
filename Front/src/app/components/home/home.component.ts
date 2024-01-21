@@ -25,8 +25,8 @@ export class HomeComponent {
 
   getDentists()
   {
-    this.dentistService.getAllDentists().subscribe (
-      {
+    this.dentistService.getAllDentists().subscribe 
+    ({
         next: (res) =>{
           this.dentists = res;
         },
@@ -36,7 +36,7 @@ export class HomeComponent {
       })
   }
 
-  funkc()//moglo bi onInit da se proverava ?
+  funkc()
   {
     if(this.cookie.check("token"))
     this.logged = true;

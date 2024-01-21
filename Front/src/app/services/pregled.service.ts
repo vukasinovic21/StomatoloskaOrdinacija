@@ -16,6 +16,6 @@ export class PregledService {
 
   getAllPregleds(id:string) : Observable<Pregled[]>
   {
-    return this.httpClient.get<Pregled[]>(this.backUrl + "pregled/?id="+ id);//treba uzeti sve preglede koji imaju istog stomatologa
+    return this.httpClient.get<Pregled[]>(this.backUrl + "pregled/stom/?id="+ id);//treba uzeti sve preglede koji imaju istog stomatologa
   }
 }

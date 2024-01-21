@@ -2,6 +2,6 @@ export interface Pregled
 {
     name: string,
     lastname: string,
-    email: number,
+    email: string,
     datum: Date
 }

@@ -4,6 +4,7 @@ import { Pregled } from 'src/app/models/pregled';
 import { Stomatolog } from 'src/app/models/stomatolog';
 import { PregledService } from 'src/app/services/pregled.service';
 import { StomatologService } from 'src/app/services/stomatolog.service';
+import { BrowserModule } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-stomatolog',
@@ -17,28 +18,42 @@ export class StomatologComponent
 
   dentist!: Stomatolog;
   id!: string;
-  pregledi?:Pregled[] = []
+  pregledi?: Pregled[] = []
 
   ngOnInit(): void
   {
     this.activatedRoute.params.subscribe((params) => {
-      this.id = params["id"];
+      this.id = params["id"];});
       this.getDentist();
-    });   
+      this.getAllPregleds();
   }
 
-  getDentist(): void 
+  getDentist()
   {
     this.dentistService.getDentistById(this.id).subscribe({next: (res) => {
+      //console.log("DENTIST: "+this.id);
       this.dentist = res;
     }, error: (error) => {
-
+      console.log("Greska prilikom getDentist()");
     }})
   }
 
   getAllPregleds()
   {
-
+    /*this.pregledService.getAllPregleds(this.id).subscribe
+      ({
+        next: (res) =>{
+          this.pregledi = res;
+          console.log(res);
+        },
+        error: (error) => {
+          console.log(error);
+        }
+      })*/
+      this.pregledService.getAllPregleds(this.id).subscribe( res =>
+        {
+          this.pregledi = res;
+        })
   }
-  
+
 }
