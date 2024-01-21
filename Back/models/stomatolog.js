@@ -23,6 +23,7 @@ var StomatologSchema = mongoose.Schema({
         type: String,
         required: false
     },
+    datumZaposlenja: { type: Date },
     admin: { type: Boolean },
     hash: { type: String },
     salt: { type: String }
@@ -73,6 +74,7 @@ StomatologModel.register = async function(email, username, name, lastname, passw
         username:username,
         name:name,
         lastname:lastname,
+        datumZaposlenja:Date(),
         admin: false
     })
 

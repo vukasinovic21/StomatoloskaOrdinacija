@@ -6,6 +6,7 @@ export interface Stomatolog
     email: String;
     name: String;
     lastname: String;
+    datumZaposlenja:Date;
 }
 
 //email, username, name, lastname, admin, hash, salt

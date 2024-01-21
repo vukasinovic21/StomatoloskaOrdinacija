@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Pregled } from 'src/app/models/pregled';
 import { Stomatolog } from 'src/app/models/stomatolog';
 import { PregledService } from 'src/app/services/pregled.service';
@@ -14,7 +14,7 @@ import { BrowserModule } from '@angular/platform-browser'
 export class StomatologComponent 
 {
 
-  constructor(private activatedRoute: ActivatedRoute, private dentistService: StomatologService, private pregledService:PregledService) {}
+  constructor(private activatedRoute: ActivatedRoute, private dentistService: StomatologService, private pregledService:PregledService, private router:Router) {}
 
   dentist!: Stomatolog;
   id!: string;
@@ -56,4 +56,8 @@ export class StomatologComponent
         })
   }
 
+  home()
+  {
+    this.router.navigate(['home']);
+  }
 }

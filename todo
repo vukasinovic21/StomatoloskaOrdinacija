@@ -1,7 +1,7 @@
 1. POCETNA STRANICA
-+- 1 prikaz svih relevantnih informacija o stomatoloskoj ordinaciji - FRONT 
++ 1 prikaz svih relevantnih informacija o stomatoloskoj ordinaciji - FRONT 
 + 2 pregled stomatologa sa slikama, imenima i dodatnim informacijama + -slike
-- 3 klikom na stomatologa, prikaz detalja o radnom stazu, broju pacijenata i prosecnoj oceni zadovoljstva pacijenata...
++- 3 klikom na stomatologa, prikaz detalja o radnom stazu, broju pacijenata i prosecnoj oceni zadovoljstva pacijenata...
 
 -ubaciti za stomatologa kada se zaposlio pa na osnovu danasnjeg dana racunati staz
 +napraviti na beku da se vraca broj pregleda jednog stomatologa umesto broja pacijenata
@@ -27,3 +27,4 @@
 
 mogu da se registruju samo stomatolozi za sad a korisnici mogu da popune upitnik kada zele da zakazu pregled... do daljnjeg
 za kasnije ubaciti i users tabelu u bazu i onda omoguciti 2 vrste prijavljivanja itd..
+kada se omoguci i pristup drugim korisnicima onda omoguciti i ocenjivanje stomatologa?

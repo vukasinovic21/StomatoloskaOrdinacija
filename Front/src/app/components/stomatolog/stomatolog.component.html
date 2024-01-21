@@ -1,8 +1,9 @@
-<p><b>{{this.dentist.username}}</b> - details</p>
+<p><b>{{this.dentist.username}}</b> - details <button (click)="home()">Home</button></p>
 <div>
     Email: {{this.dentist.email}}<br>
     Name: {{this.dentist.name}}<br>
     Lastname: {{this.dentist.lastname}}<br>
+    Datum zaposlenja: {{this.dentist.datumZaposlenja}}
 </div>
 <div>
     <h3>Trenutan broj zakazanih pregleda: {{ pregledi?.length }}</h3>
