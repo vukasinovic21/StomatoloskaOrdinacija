@@ -3,7 +3,7 @@ var ObjectId = require('mongoose').Types.ObjectId;
 
 var getAll = function()
 {
-    return StomatologModel.find()
+    return StomatologModel.find().where({admin: false})//admin = false
 }
 
 
