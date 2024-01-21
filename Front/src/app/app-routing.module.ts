@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NoLoggedGuard } from './guards/no-logged.guard';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
+import { StomatologComponent } from './components/stomatolog/stomatolog.component';
 
 const routes: Routes = 
 [
@@ -25,6 +26,11 @@ const routes: Routes =
     [
       {path:"#page-top",component:HomeComponent},
     ]
+  },
+  {
+    path:"stomatolog/:id",
+    component:StomatologComponent,
+    //canActivate:[NoLoggedGuard],
   },
 ];
 

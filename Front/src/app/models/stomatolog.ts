@@ -1,5 +1,6 @@
 export interface Stomatolog 
 {
+    _id:String,
     username: String,
     password: String;
     email: String;

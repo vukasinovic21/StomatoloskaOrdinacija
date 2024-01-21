@@ -15,7 +15,7 @@ export class HomeComponent {
 
   logged ?: Boolean = false
   dentists?: Stomatolog[] = []
-
+  dentist?: Stomatolog
 
   ngOnInit(): void 
   {
@@ -50,5 +50,10 @@ export class HomeComponent {
       this.cookie.delete("token");
       this.router.navigate(['login'])
     }
+  }
+
+  dentistDetails(dentist:any)
+  {
+    this.router.navigate(['stomatolog/', dentist._id])
   }
 }

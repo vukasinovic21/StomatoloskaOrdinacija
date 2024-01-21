@@ -1,1 +1,16 @@
-<p>stomatolog works!</p>
+<p><b>{{this.dentist.username}}</b> - details</p>
+<div>
+    Email: {{this.dentist.email}}<br>
+    Name: {{this.dentist.name}}<br>
+    Lastname: {{this.dentist.lastname}}<br>
+</div>
+<div>
+    <h3>Zakazani pregledi:</h3>
+    <div *ngFor="let pregled of pregledi">
+        Name: {{ pregled.name }}
+        <br>Lastname: {{ pregled.lastname }}
+        <br>Email: {{ pregled.email }}
+        <br>Datum: {{ pregled.datum }}
+        <br><hr>
+    </div>
+</div>

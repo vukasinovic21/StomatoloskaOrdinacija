@@ -78,7 +78,7 @@
                             <h4>Woo Smile strucni tim</h4>
                             <p class="text-black-50 mb-0">Trenutan broj svih stomatologa: {{ dentists?.length }}<br><br></p>
                             <div *ngFor="let stom of dentists">
-                                <p>Name: {{ stom.name }}
+                                <p (click)="dentistDetails(stom)">Name: {{ stom.name }}
                                 <br>Lastname: {{ stom.lastname }}
                                 <br>Email: {{ stom.email }}
                                 <br><hr></p>

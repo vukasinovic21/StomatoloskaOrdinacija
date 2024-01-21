@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Pregled } from 'src/app/models/pregled';
 import { Stomatolog } from 'src/app/models/stomatolog';
+import { PregledService } from 'src/app/services/pregled.service';
 import { StomatologService } from 'src/app/services/stomatolog.service';
 
 @Component({
@@ -11,18 +13,16 @@ import { StomatologService } from 'src/app/services/stomatolog.service';
 export class StomatologComponent 
 {
 
-  constructor(private activatedRoute: ActivatedRoute, private dentistService: StomatologService) {}
+  constructor(private activatedRoute: ActivatedRoute, private dentistService: StomatologService, private pregledService:PregledService) {}
 
   dentist!: Stomatolog;
   id!: string;
+  pregledi?:Pregled[] = []
 
   ngOnInit(): void
   {
     this.activatedRoute.params.subscribe((params) => {
-      console.log(params["id"]);
-
       this.id = params["id"];
-
       this.getDentist();
     });   
   }
@@ -34,6 +34,11 @@ export class StomatologComponent
     }, error: (error) => {
 
     }})
+  }
+
+  getAllPregleds()
+  {
+
   }
   
 }
