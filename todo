@@ -3,8 +3,8 @@
 + 2 pregled stomatologa sa slikama, imenima i dodatnim informacijama + -slike
 +- 3 klikom na stomatologa, prikaz detalja o radnom stazu, broju pacijenata i prosecnoj oceni zadovoljstva pacijenata...
 
--ubaciti za stomatologa kada se zaposlio pa na osnovu danasnjeg dana racunati staz
-+napraviti na beku da se vraca broj pregleda jednog stomatologa umesto broja pacijenata
++ ubaciti za stomatologa kada se zaposlio pa na osnovu danasnjeg dana racunati staz
++ napraviti na beku da se vraca broj pregleda jednog stomatologa umesto broja pacijenata
 
 2. ZAKAZIVANJE PREGLEDA
 + 1 opcija zakazi pregled sa izborom stomatologa 

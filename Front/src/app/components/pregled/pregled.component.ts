@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Stomatolog } from 'src/app/models/stomatolog';
 import { PregledService } from 'src/app/services/pregled.service';
 import { StomatologService } from 'src/app/services/stomatolog.service';
 
@@ -10,7 +11,7 @@ import { StomatologService } from 'src/app/services/stomatolog.service';
 })
 export class PregledComponent {
 
-  constructor(private activatedRoute: ActivatedRoute, private pregledService:PregledService, private router:Router) {}
+  constructor(private activatedRoute: ActivatedRoute, private pregledService:PregledService, private router:Router, private stomatologService:StomatologService) {}
 
   name?:any
   lastname?:any
@@ -18,10 +19,13 @@ export class PregledComponent {
   datum?:any
   stomatolog?:any
 
+  dentist?: Stomatolog
+
   ngOnInit(): void
   {
     this.activatedRoute.params.subscribe((params) => {
       this.stomatolog = params["id"];});
+    this.getDentist();
   }
 
   zakazi()
@@ -35,5 +39,13 @@ export class PregledComponent {
   back()
   {
     this.router.navigate(['stomatolog/'+this.stomatolog]);
+  }
+
+  getDentist()
+  {
+    this.stomatologService.getDentistById(this.stomatolog).subscribe(stoma =>
+      {
+        this.dentist = stoma;
+      })
   }
 }
