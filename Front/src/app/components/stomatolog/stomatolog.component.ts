@@ -19,6 +19,7 @@ export class StomatologComponent
   dentist!: Stomatolog;
   id!: string;
   pregledi?: Pregled[] = []
+  pregledi2?: Pregled[] = []
   godina!: number
   mesec!: number
 
@@ -26,8 +27,9 @@ export class StomatologComponent
   {
     this.activatedRoute.params.subscribe((params) => {
       this.id = params["id"];});
-      this.getDentist();
-      this.getAllPregleds();
+    this.getDentist();
+    this.getAllPregleds();
+    //this.pregledi?.sort((a,b) => a.datum - b.datum)//treba mi nesto sto moze da poredi string ili date i da ga sortiram po datumima
   }
 
   getDentist()

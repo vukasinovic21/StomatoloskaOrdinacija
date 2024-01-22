@@ -1,5 +1,5 @@
-<p><b>{{this.dentist.username}}</b> - details <button (click)="home()">Home</button></p>
-<div>
+<div style="color: #64a19d;">
+<p><b>{{this.dentist.username}}</b> - details <button (click)="home()" style="color:#64a19d">Home</button></p>
     Email: {{this.dentist.email}}<br>
     Name: {{this.dentist.name}}<br>
     Lastname: {{this.dentist.lastname}}<br>
@@ -8,12 +8,14 @@
     <span *ngIf="this.godina<1">Meseci staza: {{this.mesec}}<br></span>
 </div>
 <div>
-    <h3>Trenutan broj zakazanih pregleda: {{ pregledi?.length }} <button (click)="zakaziPregled(this.dentist._id)">Zakazi pregled</button></h3>
-    <div *ngFor="let pregled of pregledi">
-        Name: {{ pregled.name }}
-        <br>Lastname: {{ pregled.lastname }}
-        <br>Email: {{ pregled.email }}
-        <br>Datum: {{ pregled.datum }}
-        <br><hr>
-    </div>
+    <h3 style="color: #64a19d;">Trenutan broj zakazanih pregleda: {{ pregledi?.length }} <button (click)="zakaziPregled(this.dentist._id)" style="color:#64a19d">Zakazi pregled</button></h3>
+    <table [cellPadding]="5" border="2" style="border-color: #64a19d;">
+        <tr><th>Name</th><th>Lastname</th><th>Email</th><th>Datum</th></tr>
+        <tr *ngFor="let pregled of pregledi" style="width: 500px">
+            <td> {{ pregled.name }} </td>
+            <td> {{ pregled.lastname }} </td>
+            <td> {{ pregled.email }} </td>
+            <td> {{ pregled.datum }} </td>
+        </tr>
+    </table>
 </div>
