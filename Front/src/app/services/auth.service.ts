@@ -43,7 +43,7 @@ export class AuthService {
       "email":email,
       "username":username,
       "password":password,
-      "lastname":password2,
+      "password2":password2,
     });
   }
 
