@@ -36,6 +36,17 @@ export class AuthService {
     });
   }
 
+  updatePassword(email:any, username:any, password:string, password2:string) : Observable<Token>
+  {
+    return this.httpClient.put<Token>(this.backUrl + "forgotPassword",
+    {
+      "email":email,
+      "username":username,
+      "password":password,
+      "lastname":password2,
+    });
+  }
+
   validate()
   {
     

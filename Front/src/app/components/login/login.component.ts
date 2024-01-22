@@ -19,7 +19,7 @@ export class LoginComponent {
   {
     this.authService.login(this.username, this.password).subscribe(token =>
       {
-        console.log(token.token);
+        //console.log(token.token);
         this.cookie.set("token", token.token)
         this.router.navigate(['home'])
       })

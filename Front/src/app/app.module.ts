@@ -11,6 +11,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { StomatologComponent } from './components/stomatolog/stomatolog.component';
 import { PregledComponent } from './components/pregled/pregled.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PregledComponent } from './components/pregled/pregled.component';
     RegisterComponent,
     HomeComponent,
     StomatologComponent,
-    PregledComponent
+    PregledComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { StomatologComponent } from './components/stomatolog/stomatolog.component';
 import { PregledComponent } from './components/pregled/pregled.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 const routes: Routes = 
 [
@@ -36,6 +37,11 @@ const routes: Routes =
   {
     path:"pregled/:id",
     component:PregledComponent,
+    //canActivate:[NoLoggedGuard],
+  },
+  {
+    path:"forgotPassword",
+    component:ForgotPasswordComponent,
     //canActivate:[NoLoggedGuard],
   },
 ];

@@ -18,6 +18,17 @@ router.post("/login",
     res.send({token:req.user.generateJwt()})
 })
 
+router.put("/forgotPassword", 
+    //passport.authenticate('local', {session:false}),
+    //passport.log(),
+async (req, res)=>{
+    var user = await authService.update(req.body);
+    if(user)
+        res.status(200).send()//res.send({token:user.generateJwt()})
+    else
+        res.status(501).send()
+})
+
 router.get("/validate-jwt",
     passport.authenticate('jwt', {session: false}),
 (req, res)=> {
