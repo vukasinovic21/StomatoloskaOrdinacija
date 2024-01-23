@@ -13,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
+    "-": "^0.0.1",
     "@angular/animations": "~13.3.0",
     "@angular/common": "~13.3.0",
     "@angular/compiler": "~13.3.0",
@@ -22,9 +23,11 @@
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
     "@auth0/angular-jwt": "^3.0.1",
+    "angular-base64-upload": "^0.1.23",
     "bootstrap": "^5.3.2",
     "ngx-cookie-service": "^13.2.1",
     "rxjs": "~7.5.0",
+    "save": "^2.9.0",
     "startbootstrap-grayscale": "^7.0.6",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
