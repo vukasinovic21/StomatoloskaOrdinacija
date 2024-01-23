@@ -24,6 +24,7 @@ export class RegisterComponent {
   lastname?:any
   password?:any
   imageUrl!: File;
+  checked:Boolean = true;
   ngOnInit() : void
   {
     
@@ -38,8 +39,13 @@ export class RegisterComponent {
   {
     this.authService.register(this.email, this.username, this.name, this.lastname, this.password, this.imageUrl).subscribe( token =>
       {
-        this.cookie.set("token", token.token)
-        this.router.navigate(['home'])
+        if(this.checked)
+        {
+          this.cookie.set("token", token.token)
+          this.router.navigate(['home'])
+        }
+        else
+          this.router.navigate(['login'])
       })
   }
 

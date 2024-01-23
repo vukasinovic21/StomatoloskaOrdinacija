@@ -16,22 +16,14 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage})
 
-router.post('/register', upload.single('file'), (req, res) => {
-    try {
-        var user = authService.register(req.body.email, req.body.username, req.body.name, req.body.lastname, req.body.password, req.file.filename)//req.file?
-        if (user)
-        {
-            console.log(user);
-            res.send({token:user.generateJwt()})
-        }   
-        else
-            res.status(501).send()
-      
-    } 
-    catch (error) 
+router.post('/register', upload.single('file'), async (req, res) => {
+    var user = await authService.register(req.body.email, req.body.username, req.body.name, req.body.lastname, req.body.password, req.file.filename)
+    if (user)
     {
-      res.status(500).send(error);
-    }
+      res.send({token:user.generateJwt()})
+    }   
+    else
+        res.status(501).send()
   });
 
 router.post("/login", 
