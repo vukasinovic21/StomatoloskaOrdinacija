@@ -3,12 +3,14 @@ import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Stomatolog } from 'src/app/models/stomatolog';
 import { StomatologService } from 'src/app/services/stomatolog.service';
+//import * as bootstrap from "bootstrap";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent {
   constructor(private router:Router, private dentistService:StomatologService, private cookie:CookieService) {}
   title = 'Ordinacija';
@@ -16,6 +18,7 @@ export class HomeComponent {
   logged ?: Boolean = false
   dentists?: Stomatolog[] = []
   dentist?: Stomatolog
+
 
   ngOnInit(): void 
   {
@@ -57,4 +60,6 @@ export class HomeComponent {
   {
     this.router.navigate(['stomatolog/', dentist._id])
   }
+
+  
 }
