@@ -9,5 +9,3 @@ export interface Stomatolog
     datumZaposlenja:Date;
     imageUrl: File;
 }
-
-//email, username, name, lastname, admin, hash, salt

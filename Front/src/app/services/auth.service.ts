@@ -27,17 +27,19 @@ export class AuthService {
   register(email:any, username:any, name:any, lastname:any, password:any, imageUrl:File) : Observable<Token>
   {
     const formData = new FormData();
-    console.log(imageUrl)
-    //formData.append(imageUrl.name, imageUrl, imageUrl.name);
-    return this.httpClient.post<Token>(this.backUrl + "register",
+    const file: HTMLInputElement | null = document.getElementById('file') as HTMLInputElement;
+
+    formData.append('email', email);
+    formData.append('username', username);
+    formData.append('name', name);
+    formData.append('lastname', lastname);
+    formData.append('password', password);
+    if(file && file.files && file.files.length > 0)
     {
-      "email":email,
-      "username":username,
-      "name":name,
-      "lastname":lastname,
-      "password":password,
-      "imageUrl":imageUrl//formData
-    });
+      formData.append('file', file.files[0]);
+    }
+
+    return this.httpClient.post<Token>(this.backUrl + "register",formData);
   }
 
   updatePassword(email:any, username:any, password:string, password2:string) : Observable<Token>

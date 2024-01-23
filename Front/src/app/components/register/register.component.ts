@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from '../../services/auth.service';
@@ -12,6 +12,9 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
 })
 export class RegisterComponent {
 
+  @ViewChild('file') file: ElementRef | undefined;
+  uploadProgress:number | null = null;
+
   constructor(private authService:AuthService, private cookie:CookieService, private router:Router) { }
 
 
@@ -20,16 +23,19 @@ export class RegisterComponent {
   name?:any
   lastname?:any
   password?:any
-  imageUrl!:File
-  //this.imageUrl = event.target.files[0]; ?? kako doci do samog fajlaa
-
+  imageUrl!: File;
   ngOnInit() : void
   {
     
   }
 
+  onChange(event:any) : void 
+  { 
+    this.imageUrl = <File>event.target.files[0]; 
+} 
+
   register()
-  {//this.galleryForm.get('imageFile').value._files[0]
+  {
     this.authService.register(this.email, this.username, this.name, this.lastname, this.password, this.imageUrl).subscribe( token =>
       {
         this.cookie.set("token", token.token)
@@ -44,6 +50,6 @@ export class RegisterComponent {
 
   forgotPassword()
   {
-    this.router.navigate(['register'])//forgotPassword;
+    this.router.navigate(['register'])
   }
 }
