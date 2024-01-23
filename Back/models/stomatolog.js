@@ -76,7 +76,7 @@ StomatologModel.register = async function(email, username, name, lastname, passw
         name:name,
         lastname:lastname,
         datumZaposlenja:Date(),
-        imageUrl: "D:/Vezba/4.godina/Web2/StomatoloskaOrdinacija/Back/images/"+imageUrl,
+        imageUrl: "assets/img/"+imageUrl,
         admin: false
     })
 
