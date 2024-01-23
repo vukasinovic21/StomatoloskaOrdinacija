@@ -24,15 +24,19 @@ export class AuthService {
     });
   }
 
-  register(email:any, username:any, name:any, lastname:any, password:any) : Observable<Token>
+  register(email:any, username:any, name:any, lastname:any, password:any, imageUrl:File) : Observable<Token>
   {
+    const formData = new FormData();
+    console.log(imageUrl)
+    //formData.append(imageUrl.name, imageUrl, imageUrl.name);
     return this.httpClient.post<Token>(this.backUrl + "register",
     {
       "email":email,
       "username":username,
       "name":name,
       "lastname":lastname,
-      "password":password
+      "password":password,
+      "imageUrl":imageUrl//formData
     });
   }
 

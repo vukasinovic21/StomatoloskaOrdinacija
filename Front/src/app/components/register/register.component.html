@@ -24,43 +24,50 @@
 				<div class="col-md-6 col-lg-5">
 					<div class="login-wrap p-4 p-md-5">
                         <h1 class="text-center mb-4">Register</h1>
-		      	<div class="icon d-flex align-items-center justify-content-center">
-		      		<span class="fa fa-user-o"></span>
-		      	</div>
-		      	<h3 class="text-center mb-4">Don't have an account?</h3>
-						
-		      		<div class="form-group">
-		      			<input type="text" class="form-control rounded-left" placeholder="Email" required [(ngModel)]="email">
-		      		</div>
-	                <div class="form-group d-flex">
-	                    <input type="text" class="form-control rounded-left" placeholder="Username" required [(ngModel)]="username">
-	                </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control rounded-left" placeholder="Name" required [(ngModel)]="name">
-                    </div>
-                  <div class="form-group d-flex">
-                      <input type="text" class="form-control rounded-left" placeholder="Lastname" required [(ngModel)]="lastname">
-                  </div>
-                  <div class="form-group d-flex">
-                    <input type="password" class="form-control rounded-left" placeholder="Password" required [(ngModel)]="password">
-                </div>
-	            <div class="form-group d-md-flex">
-	            	<div class="w-50">
-	            		<label class="checkbox-wrap checkbox-primary">Auto login
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
-									</label>
-								</div>
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="fa fa-user-o"></span>
+						</div>
+						<h3 class="text-center mb-4">Don't have an account?</h3>
+								
+						<div class="form-group">
+							<input type="text" class="form-control rounded-left" placeholder="Email" required [(ngModel)]="email">
+						</div>
+						<div class="form-group d-flex">
+							<input type="text" class="form-control rounded-left" placeholder="Username" required [(ngModel)]="username">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control rounded-left" placeholder="Name" required [(ngModel)]="name">
+						</div>
+						<div class="form-group d-flex">
+							<input type="text" class="form-control rounded-left" placeholder="Lastname" required [(ngModel)]="lastname">
+						</div>
+						<div class="form-group d-flex">
+							<input type="password" class="form-control rounded-left" placeholder="Password" required [(ngModel)]="password">
+						</div>
+						<div class="form-group d-flex">
+							<mat-form-field class="example-full-width">
+								<mat-label></mat-label>
+								<ngx-mat-file-input [(ngModel)]="imageUrl" placeholder="Select Image" valuePlaceholder="No image file selected"></ngx-mat-file-input>
+								<mat-icon matSuffix>folder</mat-icon>
+							</mat-form-field>
+						</div>
+						<div class="form-group d-md-flex">
+							<div class="w-50">
+								<label class="checkbox-wrap checkbox-primary">Auto login
+								<input type="checkbox" checked>
+								<span class="checkmark"></span>
+								</label>
+							</div>
 								<div class="w-50 text-md-right">
 									<!--<a (click)="forgotPassword()" href="/register">Forgot Password</a>href='/forgotPassword'-->
 								</div>
-	            </div><br>
-	            <div class="centriraj">
-	            	<button (click)="register()" type="submit" class="btn btn-primary rounded submit p-3 px-5">Register</button>
-                    <button (click)="home()" type="submit" class="btn btn-primary1 rounded submit2 p-3 px-5" style="background-color:#8d448b; color:#fff;">Home</button>
-                    <!--<button (click)="home()" type="submit">Home</button>-->
-	            </div>
-                <div><p><br></p></div>
+						</div><br>
+						<div class="centriraj">
+							<button (click)="register()" type="submit" class="btn btn-primary rounded submit p-3 px-5">Register</button>
+							<button (click)="home()" type="submit" class="btn btn-primary1 rounded submit2 p-3 px-5" style="background-color:#8d448b; color:#fff;">Home</button>
+							<!--<button (click)="home()" type="submit">Home</button>-->
+						</div>
+						<div><p><br></p></div>
 	        </div>
 				</div>
 			</div>

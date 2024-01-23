@@ -24,6 +24,7 @@ var StomatologSchema = mongoose.Schema({
         required: false
     },
     datumZaposlenja: { type: Date },
+    imageUrl: { type: String },
     admin: { type: Boolean },
     hash: { type: String },
     salt: { type: String }
@@ -67,14 +68,16 @@ StomatologSchema.methods.getRole = function()
 
 var StomatologModel = mongoose.model("Stomatolog", StomatologSchema)
 
-StomatologModel.register = async function(email, username, name, lastname, password)
+StomatologModel.register = async function(email, username, name, lastname, password, imageUrl)
 {
+    console.log(imageUrl._fileNames)//undefined
     var Stomatolog = new StomatologModel({
         email:email,
         username:username,
         name:name,
         lastname:lastname,
         datumZaposlenja:Date(),
+        imageUrl: "D:/Vezba/4.godina/Web2/StomatoloskaOrdinacija/Back/images/"+imageUrl._fileNames,//samo ime i dobijem a fajl??
         admin: false
     })
 

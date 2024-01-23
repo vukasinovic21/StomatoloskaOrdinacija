@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from '../../services/auth.service';
+
+import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -18,11 +20,17 @@ export class RegisterComponent {
   name?:any
   lastname?:any
   password?:any
+  imageUrl!:File
+  //this.imageUrl = event.target.files[0]; ?? kako doci do samog fajlaa
 
+  ngOnInit() : void
+  {
+    
+  }
 
   register()
-  {
-    this.authService.register(this.email, this.username, this.name, this.lastname, this.password).subscribe( token =>
+  {//this.galleryForm.get('imageFile').value._files[0]
+    this.authService.register(this.email, this.username, this.name, this.lastname, this.password, this.imageUrl).subscribe( token =>
       {
         this.cookie.set("token", token.token)
         this.router.navigate(['home'])

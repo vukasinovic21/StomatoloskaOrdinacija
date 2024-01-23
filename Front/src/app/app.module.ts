@@ -12,6 +12,15 @@ import { HomeComponent } from './components/home/home.component';
 import { StomatologComponent } from './components/stomatolog/stomatolog.component';
 import { PregledComponent } from './components/pregled/pregled.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
 
 @NgModule({
   declarations: [
@@ -28,7 +37,15 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MaterialFileInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
