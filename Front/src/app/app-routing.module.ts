@@ -26,7 +26,7 @@ const routes: Routes =
     //canActivate:[NoLoggedGuard],
     children:
     [
-      {path:"#page-top",component:HomeComponent},
+      {path:"#dentists",component:HomeComponent},
     ]
   },
   {
