@@ -24,6 +24,8 @@ export class StomatologComponent
   godina!: number
   mesec!: number
   logged ?: Boolean = false
+  brGodina = 42;
+  brTelefona = +381613216547;
 
   ngOnInit(): void
   {
