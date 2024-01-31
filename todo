@@ -14,8 +14,8 @@
 
 # 3. ADMINISTRATORSKI PANEL
 # + 1 logovanje administratora sa korisnickim imenom i lozinkom
-# + 2 ?mogucnost za odobravanjem?, brisanjem ili pregledom zakazanih pregleda
-# + 3 pregled broja zakazanih pregleda po svakom stomatologu
+# + 2 ?mogucnost za odobravanjem?, brisanjem ili pregledom zakazanih pregleda - ne na frontu jos uvek
+# + 3 pregled broja zakazanih pregleda po svakom stomatologu 
 # - 4 slanje mejlova korisnicima o uspesnom zakazivanju i stomatolozima o novom pregledu
 
 # 4. STOMATOLOG KORISNICKI PANEL
@@ -24,8 +24,8 @@
 # + 3 pregled zakazanih pregleda sa imenom,prezimenom pacijenata i vremenom pregleda
 # - 4 treba da postoji i mogucnost prikaza istorije prethodnih pregleda za svakog pacijenta sa detaljima i dodavanje novih detalja nakon pregleda
 
-# sortirati preglede po datumima od najskorijeg
-# izdvojiti da samo stomatolozi kad se uloguju vide tabelu sa pregledima, a neulogovani korisnici da vide samo informacije i zakazivanje pregleda
+# - sortirati preglede po datumima od najskorijeg
+# - izdvojiti da samo stomatolozi kad se uloguju vide tabelu sa pregledima, a neulogovani korisnici da vide samo informacije i zakazivanje pregleda
 
 # +napraviti forgot password ako korisnik unese sve potrebne informacije, moze da promeni lozinku
 # mogu da se registruju samo stomatolozi za sad a korisnici mogu da popune upitnik kada zele da zakazu pregled... do daljnjeg

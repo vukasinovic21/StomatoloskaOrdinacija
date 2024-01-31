@@ -5,6 +5,7 @@ import { Stomatolog } from 'src/app/models/stomatolog';
 import { PregledService } from 'src/app/services/pregled.service';
 import { StomatologService } from 'src/app/services/stomatolog.service';
 import { BrowserModule } from '@angular/platform-browser'
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-stomatolog',
@@ -14,7 +15,7 @@ import { BrowserModule } from '@angular/platform-browser'
 export class StomatologComponent 
 {
 
-  constructor(private activatedRoute: ActivatedRoute, private dentistService: StomatologService, private pregledService:PregledService, private router:Router) {}
+  constructor(private activatedRoute: ActivatedRoute, private dentistService: StomatologService, private pregledService:PregledService, private router:Router, private cookie:CookieService) {}
 
   dentist!: Stomatolog;
   id!: string;
@@ -22,9 +23,11 @@ export class StomatologComponent
   pregledi2?: Pregled[] = []
   godina!: number
   mesec!: number
+  logged ?: Boolean = false
 
   ngOnInit(): void
   {
+    this.funkc();
     this.activatedRoute.params.subscribe((params) => {
       this.id = params["id"];});
     this.getDentist();
@@ -59,6 +62,12 @@ export class StomatologComponent
         {
           this.pregledi = res;
         })
+  }
+
+  funkc()
+  {
+    if(this.cookie.check("token"))
+    this.logged = true;
   }
 
   home()
