@@ -1,3 +1,7 @@
+.button-container {
+  display: flex;
+}
+
 .u-section-1 .u-sheet-1 {
     min-height: 918px;
   }
