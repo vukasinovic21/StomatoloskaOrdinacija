@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Token } from '../models/token';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { environment } from '../environments/environment';
 })
 export class AuthService {
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient, private cookie:CookieService) { }
 
   private backUrl = environment.backUrl + "auth/"
 
@@ -55,6 +55,11 @@ export class AuthService {
 
   validate()
   {
-    
+    let token = this.cookie.get("token");
+    let httpHeader = new HttpHeaders
+    ({
+        "Authorization": `Bearer ${token}`
+    });
+    return this.httpClient.get<any>(this.backUrl + "validate-jwt", {headers:httpHeader});
   }
 }
