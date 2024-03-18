@@ -24,12 +24,12 @@
 # + 3 pregled zakazanih pregleda sa imenom,prezimenom pacijenata i vremenom pregleda
 # - 4 treba da postoji i mogucnost prikaza istorije prethodnih pregleda za svakog pacijenta sa detaljima i dodavanje novih detalja nakon pregleda
 
-# - dodati datum rodjenja za stomatologe
-# - dodati broj telefona za stomatologe
+# + (dodat broj godina zbog privatnosti) dodati datum rodjenja za stomatologe
+# + dodati broj telefona za stomatologe
 # - sortirati preglede po datumima od najskorijeg
-# - izdvojiti da samo stomatolozi kad se uloguju vide tabelu sa pregledima, a neulogovani korisnici da vide samo informacije i zakazivanje pregleda
+# + izdvojiti da samo stomatolozi kad se uloguju vide tabelu sa pregledima, a neulogovani korisnici da vide samo informacije i zakazivanje pregleda
 
-# +napraviti forgot password ako korisnik unese sve potrebne informacije, moze da promeni lozinku
+# + napraviti forgot password ako korisnik unese sve potrebne informacije, moze da promeni lozinku
 # mogu da se registruju samo stomatolozi za sad a korisnici mogu da popune upitnik kada zele da zakazu pregled... do daljnjeg
 # za kasnije ubaciti i users tabelu u bazu i onda omoguciti 2 vrste prijavljivanja itd..
 # kada se omoguci i pristup drugim korisnicima onda omoguciti i ocenjivanje stomatologa?
