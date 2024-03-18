@@ -13,6 +13,10 @@ import { AdminLogged } from './guards/admin-logged-guard';
 const routes: Routes = 
 [
   {
+    path:"**",
+    component:HomeComponent
+  },
+  {
     path:"login",
     component:LoginComponent,
     canActivate:[NoLoggedGuard], //moze da se pristupi i ako nije ulogovan korisnik ali ne moze ako je ulogovan
