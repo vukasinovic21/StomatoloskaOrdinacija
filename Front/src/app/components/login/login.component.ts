@@ -20,7 +20,7 @@ export class LoginComponent {
     this.authService.login(this.username, this.password).subscribe(token =>
       {
         //console.log(token.token);
-        this.cookie.set("token", token.token)
+        this.cookie.set("token", token.token, 1, '/') //cookie traje jedan dan od logovanja
         this.router.navigate(['home'])
       })
   }

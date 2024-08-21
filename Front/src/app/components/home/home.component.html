@@ -32,9 +32,7 @@
 
                         <li class="nav-item"><a class="nav-link" style="color:lightgrey" routerLink="../login" *ngIf="!logged">Login</a></li>
                         <li class="nav-item"><a class="nav-link" style="color:lightgrey" routerLink="../register" *ngIf="!logged">Register</a></li>
-                        <!--<li class="nav-item"><a class="nav-link" style="color:#ff8080" (click)="logout()" >Logout</a></li><--href="../login" -->
-                        <li class="nav-item"><a class="nav-link" style="color:#ff8080" (click)="logout()" *ngIf="logged">Logout</a></li>
-                        <!--<li class="nav-item"><button style="background-color:transparent; color:#ff8080"  (click)="logout()">Logout</button></li>input type='submit'-->
+                        <li class="nav-item"><a class="nav-link" style="color:#ff8080" (click)="logout()" href="login" *ngIf="logged">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -85,7 +83,6 @@
                                     <br></p>
                                     Name: {{ stom.name }}
                                     <br>Lastname: {{ stom.lastname }}
-                                    <br>Email: {{ stom.email }}
                                 </div>
                             </div>
 

@@ -15,12 +15,12 @@ const routes: Routes =
   {
     path:"login",
     component:LoginComponent,
-    canActivate:[NoLoggedGuard], //moze da se pristupi i ako nije ulogovan korisnik
+    canActivate:[NoLoggedGuard], //moze da se pristupi i ako nije ulogovan korisnik ali ne moze ako je ulogovan
   },
   {
     path:"register",
     component:RegisterComponent,
-    canActivate:[AdminLogged], //moze da se pristupi samo admin
+    canActivate:[NoLoggedGuard], //moze da se pristupi i ako nije ulogovan korisnik ali ne moze ako je ulogovan
   },
   {
     path:"home",
@@ -34,7 +34,7 @@ const routes: Routes =
   {
     path:"stomatolog/:id",
     component:StomatologComponent,
-    //canActivate:[NoLoggedGuard],
+    //canActivate:[IsLoggedGuard],
   },
   {
     path:"pregled/:id",
@@ -44,7 +44,11 @@ const routes: Routes =
   {
     path:"forgotPassword",
     component:ForgotPasswordComponent,
-    canActivate:[NoLoggedGuard], //moze da se pristupi i ako nije ulogovan korisnik
+    canActivate:[NoLoggedGuard], //moze da se pristupi i ako nije ulogovan korisnik ali ne moze ako je ulogovan
+  },
+  {
+    path:"**",
+    component:HomeComponent
   },
 ];
 
