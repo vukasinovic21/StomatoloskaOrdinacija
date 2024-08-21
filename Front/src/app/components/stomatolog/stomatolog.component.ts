@@ -24,6 +24,7 @@ export class StomatologComponent
   godina!: number
   mesec!: number
   logged ?: Boolean = false
+  istekli ?: Boolean = false
   brGodina = 42;
   brTelefona = +381613216547;
 
@@ -34,7 +35,7 @@ export class StomatologComponent
       this.id = params["id"];});
     this.getDentist();
     this.getAllPregleds();
-    //this.pregledi?.sort((a,b) => a.datum - b.datum)//treba mi nesto sto moze da poredi string ili date i da ga sortiram po datumima
+    this.brojAktivnihPregleda();
   }
 
   getDentist()
@@ -62,6 +63,7 @@ export class StomatologComponent
       })*/
       this.pregledService.getAllPregleds(this.id).subscribe( res =>
         {
+          res?.sort((a, b) => new Date(a.datum).getTime() - new Date(b.datum).getTime());
           this.pregledi = res;
         })
   }
@@ -69,7 +71,7 @@ export class StomatologComponent
   funkc()
   {
     if(this.cookie.check("token"))
-    this.logged = true;
+      this.logged = true;
   }
 
   home()
@@ -90,5 +92,35 @@ export class StomatologComponent
     //console.log(this.dentist.datumZaposlenja);
     this.godina = Math.round(Math.floor((Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate()) - Date.UTC(datum.getFullYear(), datum.getMonth(), datum.getDate()) ) /(1000 * 60 * 60 * 24))/365*10)/10;
     this.mesec = Math.round(Math.floor((Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate()) - Date.UTC(datum.getFullYear(), datum.getMonth(), datum.getDate()) ) /(1000 * 60 * 60 * 24))/30.417*10)/10;
+  }
+
+  razlikaDana(date: Date): number 
+  {
+    const currentDate = new Date();
+    const diffTime = new Date(date).getTime() - currentDate.getTime();
+    return Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+  }
+
+  brojAktivnihPregleda(): number
+  {
+    let num = 0;
+    this.pregledi?.forEach((item, index) => 
+    {
+      if(this.razlikaDana(item.datum) >= 0)
+        num++;
+    });
+
+    return num;
+  }
+
+  prikaziIstekle()
+  {
+    this.logged = true;
+    this.istekli = true;
+  }
+  sakrijIstekle()
+  {
+    this.logged = true;
+    this.istekli = false;
   }
 }

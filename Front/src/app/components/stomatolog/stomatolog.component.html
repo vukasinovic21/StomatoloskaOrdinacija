@@ -31,7 +31,7 @@
             <p class="u-text u-text-2">Email: {{this.dentist.email}}<br> Broj telefona: {{this.brTelefona}}<br> Godina: {{this.brGodina}}<br> 
                 <span *ngIf="this.godina>=1">Godina staza: {{this.godina}}<br></span>
                 <span *ngIf="this.godina<1">Meseci staza: {{this.mesec}}<br></span>
-                Zakazanih pregleda: {{ pregledi?.length }}
+                Broj zakazanih pregleda: {{ pregledi?.length }}
             </p>
             <div class="button-container">
                 <a class="u-active-white u-align-left u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-palette-1-base u-btn u-button-style u-hover-white u-palette-1-base u-text-active-palette-1-base u-text-hover-palette-1-base u-btn-2" (click)="zakaziPregled(this.dentist._id)">Zakazi pregled</a>
@@ -43,15 +43,22 @@
     </section>
     <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-middle-xs u-sheet-1">
         <br><hr style="color:#64a19d;"><br>
-        <h4 *ngIf="logged">Trenutan broj zakazanih pregleda: <b style="color: #64a19d;">{{ pregledi?.length }} </b> 
-            <!--<button class="btn" style="background-color:#64a19d; color:#fff" (click)="zakaziPregled(this.dentist._id)">Zakazi pregled</button>--></h4>
+        <h4 *ngIf="logged">Trenutan broj zakazanih pregleda: <b style="color: #64a19d;">{{ brojAktivnihPregleda() }} </b>
+          <button *ngIf="istekli" class="btn" style="background-color:#64a19d; color:#fff" (click)="sakrijIstekle()">Sakrij istekle</button>
+          <button *ngIf="istekli == false" class="btn" style="background-color:#64a19d; color:#fff" (click)="prikaziIstekle()">Prikazi istekle</button>
+        </h4>
         <table [cellPadding]="5" border="2" style="border-color: #64a19d;" *ngIf="logged">
             <tr><th>Name</th><th>Lastname</th><th>Email</th><th>Datum</th></tr>
             <tr *ngFor="let pregled of pregledi" style="width: 500px">
-                <td> {{ pregled.name }} </td>
-                <td> {{ pregled.lastname }} </td>
-                <td> {{ pregled.email }} </td>
-                <td> {{ pregled.datum }} </td>
+                <td *ngIf="(razlikaDana(pregled.datum) > 0 || istekli)"> {{ pregled.name }} </td>
+                <td *ngIf="(razlikaDana(pregled.datum) > 0 || istekli)"> {{ pregled.lastname }} </td>
+                <td *ngIf="(razlikaDana(pregled.datum) > 0 || istekli)"> {{ pregled.email }} </td>
+                <td *ngIf="(razlikaDana(pregled.datum) > 0 || istekli)">
+                  <span *ngIf="(razlikaDana(pregled.datum) >= 0 && razlikaDana(pregled.datum) <= 3)" style="color:green"><b>{{ pregled.datum | date:'dd-MM-yyyy' }}</b></span>
+                  <span *ngIf="(razlikaDana(pregled.datum) > 3 && razlikaDana(pregled.datum) <= 7)" style="color:orange">{{ pregled.datum | date:'dd-MM-yyyy' }}</span>
+                  <span *ngIf="razlikaDana(pregled.datum) >= 7" style="color:brown"> {{ pregled.datum | date:'dd-MM-yyyy' }}</span>
+                  <span *ngIf="(razlikaDana(pregled.datum) < 0)" style="color:red">Proslo: <b>{{ pregled.datum | date:'dd-MM-yyyy' }}</b></span>
+                </td>
             </tr>
         </table>
         <br><br>
