@@ -4,7 +4,7 @@ Projekat za predmet Web2 - Stomatoloska Ordinacija - Web Aplikacija
 Opis projekta:
 1. Pocetna Stranica
 2. Zakazivanje Pregleda
-3. Administratoski Panel
+3. Administratorski Panel
 4. Stomatolog Korisnicki Panel
 
 Tehnicki aspekti:
