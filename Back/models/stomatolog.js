@@ -45,7 +45,7 @@ StomatologSchema.methods.validatePassword = function(password)
 StomatologSchema.methods.generateJwt = function()
 {
     var expire = new Date()
-    expire.setDate(expire.getDate()+7)
+    expire.setDate(expire.getDate()+1)
 
     return jwt.sign({
         _id:this._id,

@@ -28,7 +28,7 @@ router.get('/', async (req,res)=>{
 })
 
 router.get("/stom/",
-    //passport.authenticate('jwt', {session: false}),
+    passport.authenticate('jwt', {session: false}),
 async (req, res)=>{
     var pregledi = await PregledService.getByStomatolog(req.query.id)
     if (pregledi)
